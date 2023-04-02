@@ -41,14 +41,14 @@ The remote then configures the NRF24L01 for 2515MHz, sends a series of bytes whi
 It then sends the key command which updates the settings in the Pavotube. The command is sent using W_TX_PAYLOAD, consisting of 4 bytes:
 
 CCT Mode: INTENSITY, COLORTEMP, (INTENSITY + COLORTEMP), 255 - (INTENSITY + COLORTEMP)<br />
-INTENSITY = [0 100]<br />
-COLORTEMP = [0 100]<br />
+    INTENSITY = [0 100]<br />
+    COLORTEMP = [0 100]<br />
 
 HSI Mode: COLORBAND, INTENSITY, HUE, SATURATION<br />
-COLORBAND = 240 OR 241(hue = 0 TO 104)<br />
-INTENSITY = [0 100]<br />
-HUE = [0 255]<br />
-SATURATION = [0 100]<br />
+    COLORBAND = 240 OR 241(hue = 0 TO 104)<br />
+    INTENSITY = [0 100]<br />
+    HUE = [0 255]<br />
+    SATURATION = [0 100]<br />
 
 
 Capture of setting max brightness and max colortemp in CCI mode: [a relative link](spi_captures/CCI_max_brightness_max_colortemp.sal)<br />
