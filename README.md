@@ -22,8 +22,8 @@ The Nanlink WSRCC2 remote was used to glean insight into the protocol. The remot
 The NRF24L01 is configured as follows:
 - TX_ADDR = 12<br />
 - RX_ADDR_P0 = 12<br />
-- ENAA_P0 set to 1 (enable auto ACK on data pipe 0)<br />
-- ERX_P0 set to 1 (enable RX data pipe 0)<br />
+- ENAA_P0 = 1 (enable auto ACK on data pipe 0)<br />
+- ERX_P0 = 1 (enable RX data pipe 0)<br />
 - SETUP_RETR = 0x1f (15 retransmits, 200us delay)<br />
 - RF_CH = 0x73 (2515MHz)<br />
 - RF_SETUP = 6 (output power = 0dBm)<br />
@@ -36,7 +36,7 @@ The SPI bus and NRF24L01 CE pin signals were sniffed by soldering wires onto the
 
 The remote control first sends commands over 2460MHz, which are not acknowledged by the Pavotube and don't appear to accomplish anything.
 
-The remote then configures the NRF24L01 for 2515MHz, sends a series of bytes which are acknowledged by the Pavotube but do not seem to do anything.
+The remote then configures the NRF24L01 for 2515MHz, sends a series of bytes which are acknowledged by the Pavotube but do not seem to do anything. These may be for other lights with a different protocol.
 
 It then sends the command which updates the Pavotube. The command is sent using W_TX_PAYLOAD followed by 4 bytes:
 
@@ -77,17 +77,15 @@ The FX button sends commands on the 2460MHz channel but doesn't have any noticea
 
 ## Saleae captures
 These can be loaded into Saleae Logic to be viewed in detail:
-[CCT Max Brightness Max Colortemp](C:\Users\Ray\Documents\GitHub\pavotube\spi_captures\CCT_max_brightness_max_colortemp.sal)<br />
-[CCT Max Brightness Min Colortemp](C:\Users\Ray\Documents\GitHub\pavotube\spi_captures\CCT_max_brightness_min_colortemp.sal)<br />
-[CCT Min Brightness Max Colortemp](C:\Users\Ray\Documents\GitHub\pavotube\spi_captures\CCT_min_brightness_max_colortemp.sal)<br />
-[CCT Min Brightness Min Colortemp](C:\Users\Ray\Documents\GitHub\pavotube\spi_captures\CCT_min_brightness_min_colortemp.sal)<br />
-
+[CCT Max Brightness Max Colortemp](spi_captures\CCT_max_brightness_max_colortemp.sal)<br />
+[CCT Max Brightness Min Colortemp](spi_captures\CCT_max_brightness_min_colortemp.sal)<br />
+[CCT Min Brightness Max Colortemp](spi_captures\CCT_min_brightness_max_colortemp.sal)<br />
+[CCT Min Brightness Min Colortemp](spi_captures\CCT_min_brightness_min_colortemp.sal)<br />
 
 # Software Demo
 
 This sketch was developed on a Teensy 3.2 using the Arduino IDE plugins. It should work on a Nano, Uno, etc.
 [Code folder](C:\Users\Ray\Documents\GitHub\pavotube\pavotube_demo_sketch\pavotube_demo_sketch.ino)
-
 
 ## Versioning
 
