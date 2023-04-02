@@ -2,7 +2,7 @@
 
 This is the results of my hackinig the Nanlite PavoTube II 30C RGB LED Tube to develop my own hardware to control it over an RF link.
 
-## Demo Hardware
+# Demo Hardware
 The demo sketch was loaded onto a Teensy 3.2 which was wired to an NRF24L01+ module.
 
 Teensy 3.2  <--> NRF24L01+ module
@@ -15,7 +15,7 @@ D10  <--> /CS
 D0   <--> CE
 N/C  <--> IRQ
 
-## Transceiver Configuration
+# Transceiver Configuration
 
 The Nanlink WSRCC2 remote was used to glean insight into the protocol. The remote uses the Nordic RF NRF24L01 controlled by an STM8L151 microcontroller. The Nordic IC is on a castellated via module, connected to the main PCB via a flex cable.
 
@@ -30,7 +30,7 @@ The NRF24L01 is configured as follows:
 - CONFIG = 0xE (enable CRC, CRC is 2 bytes, POWER_UP)
 - Other register values set to defaults
 
-## SPI Bus Sniffing
+# SPI Bus Sniffing
 
 The SPI bus and NRF24L01 CE pin signals were sniffed by soldering wires onto the castellated vias on the RF module, then captured using a Saleae logic analyzer. The captures were saved and can be viewed using Saleae's Logic software.
 
@@ -56,33 +56,39 @@ Capture of setting max brightness and max colortemp in CCI mode: [a relative lin
 Capture of setting min brightness and max colortemp in CCI mode: [a relative link](spi_captures/CCI_min_brightness_max_colortemp.sal)
 
 
-PNG images of SPI bus sniffing:
+## PNG images of SPI bus sniffing:
 
-CCI mode, max brightness, max color temperature:
-Protocol image with notations: [a relative link](spi_captures/CCI_max_brightness_max_colortemp_overview.png)
-Zoomed into command 1: [a relative link](spi_captures/CCI_max_brightness_max_colortemp_cmd1.png)
-Zoomed into command 2: [a relative link](spi_captures/CCI_max_brightness_max_colortemp_cmd2.png)
-Zoomed into command 3a: [a relative link](spi_captures/CCI_max_brightness_max_colortemp_cmd3a.png)
-Zoomed into command 3b: [a relative link](spi_captures/CCI_max_brightness_max_colortemp_cmd3b.png)
-Zoomed into command 4: [a relative link](spi_captures/CCI_max_brightness_max_colortemp_cmd4.png)
-Zoomed into command 5: [a relative link](spi_captures/CCI_max_brightness_max_colortemp_cmd5.png)
-Zoomed into command 6: [a relative link](spi_captures/CCI_max_brightness_max_colortemp_cmd6.png)
+### CCT mode, max brightness, max color temperature:
+[Protocol image with notations](spi_captures/CCT_max_brightness_max_colortemp_overview.png)
+[Zoomed into command 1](spi_captures/CCT_max_brightness_max_colortemp_cmd1.png)
+[Zoomed into command 2](spi_captures/CCT_max_brightness_max_colortemp_cmd2.png)
+[Zoomed into command 3a](spi_captures/CCT_max_brightness_max_colortemp_cmd3a.png)
+[Zoomed into command 3b](spi_captures/CCT_max_brightness_max_colortemp_cmd3b.png)
+[Zoomed into command 4](spi_captures/CCT_max_brightness_max_colortemp_cmd4.png)
+[Zoomed into command 5](spi_captures/CCT_max_brightness_max_colortemp_cmd5.png)
+[Zoomed into command 6](spi_captures/CCT_max_brightness_max_colortemp_cmd6.png)
 
-CCI mode, min brightness, max color temperature:
-Zoomed into command 5: [a relative link](spi_captures/CCI_min_brightness_max_colortemp_cmd.png)
+### CCT mode, min brightness, max color temperature:
+[Zoomed into command 5](spi_captures/CCT_min_brightness_max_colortemp_cmd.png)
 
-The CCT and HSI buttons on the remote do cause the Pavotube to change between CCT and HSI modes. The RF payloads are not acknowledged however. I didn't debug this further as I have no interest in switching tube modes in that way. The tube changes modes automatically when the corresponding HSI or CCT color/intensity/hue command is sent.
+### CCT, HSI, FX buttons:
+The CCT and HSI buttons on the remote do cause the Pavotube to change between CCT and HSI modes. The RF payloads are not acknowledged however. I didn't dig into this further as I have no interest in switching tube modes in that way. The tube changes modes automatically when the corresponding HSI or CCT color/intensity/hue command is sent.
 
-The FX button sends commands on the 2460MHz channel but doesn't have any effect on the Pavotube.
+The FX button sends commands on the 2460MHz channel but doesn't have any noticeable effect on the Pavotube.
 
-## Software Demo
+## Saleae captures
+These can be loaded into Saleae Logic to be viewed in detail:
+[CCT Max Brightness Max Colortemp](C:\Users\Ray\Documents\GitHub\pavotube\spi_captures\CCT_max_brightness_max_colortemp.sal)
+[CCT Max Brightness Min Colortemp](C:\Users\Ray\Documents\GitHub\pavotube\spi_captures\CCT_max_brightness_min_colortemp.sal)
+[CCT Min Brightness Max Colortemp](C:\Users\Ray\Documents\GitHub\pavotube\spi_captures\CCT_min_brightness_max_colortemp.sal)
+[CCT Min Brightness Min Colortemp](C:\Users\Ray\Documents\GitHub\pavotube\spi_captures\CCT_min_brightness_min_colortemp.sal)
 
-#include <SPI.h>
-const int CE{0};
-const int CSN{10};
 
-#include <SPI.h>
 
+# Software Demo
+
+This sketch was developed on a Teensy 3.2 using the Arduino IDE plugins. It should work on a Nano, Uno, etc.
+[Code folder](C:\Users\Ray\Documents\GitHub\pavotube\pavotube_demo_sketch\pavotube_demo_sketch.ino)
 
 
 ## Versioning
