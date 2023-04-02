@@ -40,33 +40,33 @@ The remote then configures the NRF24L01 for 2515MHz, sends a series of bytes whi
 
 It then sends the key command which updates the settings in the Pavotube. The command is sent using W_TX_PAYLOAD, consisting of 4 bytes:
 
-CCT Mode: INTENSITY, COLORTEMP, (INTENSITY + COLORTEMP), 255 - (INTENSITY + COLORTEMP)
-INTENSITY = [0 100]
-COLORTEMP = [0 100]
+CCT Mode: INTENSITY, COLORTEMP, (INTENSITY + COLORTEMP), 255 - (INTENSITY + COLORTEMP)<br />
+INTENSITY = [0 100]<br />
+COLORTEMP = [0 100]<br />
 
-HSI Mode: COLORBAND, INTENSITY, HUE, SATURATION
-COLORBAND = 240 OR 241(hue = 0 TO 104)
-INTENSITY = [0 100]
-HUE = [0 255]
-SATURATION = [0 100]
+HSI Mode: COLORBAND, INTENSITY, HUE, SATURATION<br />
+COLORBAND = 240 OR 241(hue = 0 TO 104)<br />
+INTENSITY = [0 100]<br />
+HUE = [0 255]<br />
+SATURATION = [0 100]<br />
 
 
-Capture of setting max brightness and max colortemp in CCI mode: [a relative link](spi_captures/CCI_max_brightness_max_colortemp.sal)
+Capture of setting max brightness and max colortemp in CCI mode: [a relative link](spi_captures/CCI_max_brightness_max_colortemp.sal)<br />
 
-Capture of setting min brightness and max colortemp in CCI mode: [a relative link](spi_captures/CCI_min_brightness_max_colortemp.sal)
+Capture of setting min brightness and max colortemp in CCI mode: [a relative link](spi_captures/CCI_min_brightness_max_colortemp.sal)<br />
 
 
 ## PNG images of SPI bus sniffing:
 
 ### CCT mode, max brightness, max color temperature:
-[Protocol image with notations](spi_captures/CCT_max_brightness_max_colortemp_overview.png)
-[Zoomed into command 1](spi_captures/CCT_max_brightness_max_colortemp_cmd1.png)
-[Zoomed into command 2](spi_captures/CCT_max_brightness_max_colortemp_cmd2.png)
-[Zoomed into command 3a](spi_captures/CCT_max_brightness_max_colortemp_cmd3a.png)
-[Zoomed into command 3b](spi_captures/CCT_max_brightness_max_colortemp_cmd3b.png)
-[Zoomed into command 4](spi_captures/CCT_max_brightness_max_colortemp_cmd4.png)
-[Zoomed into command 5](spi_captures/CCT_max_brightness_max_colortemp_cmd5.png)
-[Zoomed into command 6](spi_captures/CCT_max_brightness_max_colortemp_cmd6.png)
+[Protocol image with notations](spi_captures/CCT_max_brightness_max_colortemp_overview.png)<br />
+[Zoomed into command 1](spi_captures/CCT_max_brightness_max_colortemp_cmd1.png)<br />
+[Zoomed into command 2](spi_captures/CCT_max_brightness_max_colortemp_cmd2.png)<br />
+[Zoomed into command 3a](spi_captures/CCT_max_brightness_max_colortemp_cmd3a.png)<br />
+[Zoomed into command 3b](spi_captures/CCT_max_brightness_max_colortemp_cmd3b.png)<br />
+[Zoomed into command 4](spi_captures/CCT_max_brightness_max_colortemp_cmd4.png)<br />
+[Zoomed into command 5](spi_captures/CCT_max_brightness_max_colortemp_cmd5.png)<br />
+[Zoomed into command 6](spi_captures/CCT_max_brightness_max_colortemp_cmd6.png)<br />
 
 ### CCT mode, min brightness, max color temperature:
 [Zoomed into command 5](spi_captures/CCT_min_brightness_max_colortemp_cmd.png)
@@ -78,11 +78,10 @@ The FX button sends commands on the 2460MHz channel but doesn't have any noticea
 
 ## Saleae captures
 These can be loaded into Saleae Logic to be viewed in detail:
-[CCT Max Brightness Max Colortemp](C:\Users\Ray\Documents\GitHub\pavotube\spi_captures\CCT_max_brightness_max_colortemp.sal)
-[CCT Max Brightness Min Colortemp](C:\Users\Ray\Documents\GitHub\pavotube\spi_captures\CCT_max_brightness_min_colortemp.sal)
-[CCT Min Brightness Max Colortemp](C:\Users\Ray\Documents\GitHub\pavotube\spi_captures\CCT_min_brightness_max_colortemp.sal)
-[CCT Min Brightness Min Colortemp](C:\Users\Ray\Documents\GitHub\pavotube\spi_captures\CCT_min_brightness_min_colortemp.sal)
-
+[CCT Max Brightness Max Colortemp](C:\Users\Ray\Documents\GitHub\pavotube\spi_captures\CCT_max_brightness_max_colortemp.sal)<br />
+[CCT Max Brightness Min Colortemp](C:\Users\Ray\Documents\GitHub\pavotube\spi_captures\CCT_max_brightness_min_colortemp.sal)<br />
+[CCT Min Brightness Max Colortemp](C:\Users\Ray\Documents\GitHub\pavotube\spi_captures\CCT_min_brightness_max_colortemp.sal)<br />
+[CCT Min Brightness Min Colortemp](C:\Users\Ray\Documents\GitHub\pavotube\spi_captures\CCT_min_brightness_min_colortemp.sal)<br />
 
 
 # Software Demo
