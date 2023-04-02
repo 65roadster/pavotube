@@ -6,14 +6,14 @@ This is the results of my hackinig the Nanlite PavoTube II 30C RGB LED Tube to d
 The demo sketch was loaded onto a Teensy 3.2 which was wired to an NRF24L01+ module.<br />
 
 Teensy 3.2  <--> NRF24L01+ module<br />
-3.3V <--> VCC<br />
-GND  <--> GND<br />
-SCLK <--> SCL<br />
-MOSI <--> MOSI<br />
-MISO <--> MISO<br />
-D10  <--> /CS<br />
-D0   <--> CE<br />
-N/C  <--> IRQ<br />
+&nbsp;&nbsp;&nbsp;&nbsp;  3.3V <--> VCC<br />
+&nbsp;&nbsp;&nbsp;&nbsp;  GND  <--> GND<br />
+&nbsp;&nbsp;&nbsp;&nbsp;  SCLK <--> SCL<br />
+&nbsp;&nbsp;&nbsp;&nbsp;  MOSI <--> MOSI<br />
+&nbsp;&nbsp;&nbsp;&nbsp;  MISO <--> MISO<br />
+&nbsp;&nbsp;&nbsp;&nbsp;  D10  <--> /CS<br />
+&nbsp;&nbsp;&nbsp;&nbsp;  D0   <--> CE<br />
+&nbsp;&nbsp;&nbsp;&nbsp;  N/C  <--> IRQ<br />
 
 # Transceiver Configuration
 
@@ -34,27 +34,25 @@ The NRF24L01 is configured as follows:
 
 The SPI bus and NRF24L01 CE pin signals were sniffed by soldering wires onto the castellated vias on the RF module, then captured using a Saleae logic analyzer. The captures were saved and can be viewed using Saleae's Logic software.
 
-The remote first sends commands over 2460MHz, which are not acknowledged by the Pavotube and don't appear to accomplish anything.
+The remote control first sends commands over 2460MHz, which are not acknowledged by the Pavotube and don't appear to accomplish anything.
 
 The remote then configures the NRF24L01 for 2515MHz, sends a series of bytes which are acknowledged by the Pavotube but do not seem to do anything.
 
-It then sends the key command which updates the settings in the Pavotube. The command is sent using W_TX_PAYLOAD, consisting of 4 bytes:
+It then sends the command which updates the Pavotube. The command is sent using W_TX_PAYLOAD followed by 4 bytes:
 
+&nbsp;&nbsp;&nbsp;&nbsp;  CCT Mode: INTENSITY, COLORTEMP, (INTENSITY + COLORTEMP), 255 - (INTENSITY + COLORTEMP)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    INTENSITY = [0 100]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    COLORTEMP = [0 100]<br />
 
-CCT Mode: INTENSITY, COLORTEMP, (INTENSITY + COLORTEMP), 255 - (INTENSITY + COLORTEMP)<br />
-&nbsp;&nbsp;&nbsp;&nbsp;    INTENSITY = [0 100]<br />
-&nbsp;&nbsp;&nbsp;&nbsp;    COLORTEMP = [0 100]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;  HSI Mode: COLORBAND, INTENSITY, HUE, SATURATION<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    COLORBAND = 240 OR 241<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    INTENSITY = [0 100]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    HUE = [0 255] if COLORBAND == 240, [0 to 104] if COLORBAND == 241<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    SATURATION = [0 100]<br />
 
+[Capture of setting max brightness and max colortemp in CCI mode](spi_captures/CCI_max_brightness_max_colortemp.sal)<br />
 
-HSI Mode: COLORBAND, INTENSITY, HUE, SATURATION<br />
-&nbsp;&nbsp;&nbsp;&nbsp;    COLORBAND = 240 OR 241(hue = 0 TO 104)<br />
-&nbsp;&nbsp;&nbsp;&nbsp;    INTENSITY = [0 100]<br />
-&nbsp;&nbsp;&nbsp;&nbsp;    HUE = [0 255]<br />
-&nbsp;&nbsp;&nbsp;&nbsp;    SATURATION = [0 100]<br />
-
-Capture of setting max brightness and max colortemp in CCI mode: [a relative link](spi_captures/CCI_max_brightness_max_colortemp.sal)<br />
-
-Capture of setting min brightness and max colortemp in CCI mode: [a relative link](spi_captures/CCI_min_brightness_max_colortemp.sal)<br />
+[Capture of setting min brightness and max colortemp in CCI mode](spi_captures/CCI_min_brightness_max_colortemp.sal)<br />
 
 
 ## PNG images of SPI bus sniffing:
