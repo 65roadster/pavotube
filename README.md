@@ -3,32 +3,32 @@
 This is the results of my hackinig the Nanlite PavoTube II 30C RGB LED Tube to develop my own hardware to control it over an RF link.
 
 # Demo Hardware
-The demo sketch was loaded onto a Teensy 3.2 which was wired to an NRF24L01+ module.
+The demo sketch was loaded onto a Teensy 3.2 which was wired to an NRF24L01+ module.<br />
 
-Teensy 3.2  <--> NRF24L01+ module
-3.3V <--> VCC
-GND  <--> GND
-SCLK <--> SCL	K
-MOSI <--> MOSI
-MISO <--> MISO
-D10  <--> /CS
-D0   <--> CE
-N/C  <--> IRQ
+Teensy 3.2  <--> NRF24L01+ module<br />
+3.3V <--> VCC<br />
+GND  <--> GND<br />
+SCLK <--> SCL<br />
+MOSI <--> MOSI<br />
+MISO <--> MISO<br />
+D10  <--> /CS<br />
+D0   <--> CE<br />
+N/C  <--> IRQ<br />
 
 # Transceiver Configuration
 
-The Nanlink WSRCC2 remote was used to glean insight into the protocol. The remote uses the Nordic RF NRF24L01 controlled by an STM8L151 microcontroller. The Nordic IC is on a castellated via module, connected to the main PCB via a flex cable.
+The Nanlink WSRCC2 remote was used to glean insight into the protocol. The remote uses the Nordic RF NRF24L01 controlled by an STM8L151 microcontroller. The Nordic IC is on a castellated via module, connected to the main PCB via a flex cable.<br />
 
 The NRF24L01 is configured as follows:
-- TX_ADDR = 12
-- RX_ADDR_P0 = 12
-- ENAA_P0 set to 1 (enable auto ACK on data pipe 0)
-- ERX_P0 set to 1 (enable RX data pipe 0)
-- SETUP_RETR = 0x1f (15 retransmits, 200us delay)
-- RF_CH = 0x73 (2515MHz)
-- RF_SETUP = 6 (output power = 0dBm)
-- CONFIG = 0xE (enable CRC, CRC is 2 bytes, POWER_UP)
-- Other register values set to defaults
+- TX_ADDR = 12<br />
+- RX_ADDR_P0 = 12<br />
+- ENAA_P0 set to 1 (enable auto ACK on data pipe 0)<br />
+- ERX_P0 set to 1 (enable RX data pipe 0)<br />
+- SETUP_RETR = 0x1f (15 retransmits, 200us delay)<br />
+- RF_CH = 0x73 (2515MHz)<br />
+- RF_SETUP = 6 (output power = 0dBm)<br />
+- CONFIG = 0xE (enable CRC, CRC is 2 bytes, POWER_UP)<br />
+- Other register values set to defaults<br />
 
 # SPI Bus Sniffing
 
