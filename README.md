@@ -1,6 +1,6 @@
 # Pavotube 2.4GHz RF Link Reverse Engineering
 
-This is the results of my hackinig the Nanlite PavoTube II 30C RGB LED Tube to develop my own hardware to control it over an RF link.
+This is the results of my hackinig the Nanlite PavoTube II 30C RGB LED Tube and Nanlink WSRCC2 remote control to develop my own hardware to control it over an RF link.
 
 # Demo Hardware
 The demo sketch was loaded onto a Teensy 3.2 which was wired to an NRF24L01+ module.<br />
@@ -20,11 +20,17 @@ This sketch was developed on a Teensy 3.2 using the Arduino IDE plugins. It shou
 [Demo Sketch](pavotube_demo_sketch/pavotube_demo_sketch.ino)
 [Police Lights Sketch](police_lights_effect\police_lights_effect.ino)
 
+# High Speed Effects
+Using Slo-Mo video on my iPhone 13 Pro I can verify that I get good color rendition down to 5ms on-time. This is much faster than my brain can process it; high-speed effects are possible.
+
+# Pavotube Configuration
+The Pavotube address was set to 12. Any address can be used, just update the *ADDR* values in the NRF24L01+ configuration commands.
+
 # Transceiver Configuration
 
-The Nanlink WSRCC2 remote was used to glean insight into the protocol. The remote uses the Nordic RF NRF24L01 controlled by an STM8L151 microcontroller. The Nordic IC is on a castellated via module, connected to the main PCB via a flex cable.<br />
+The Nanlink WSRCC2 remote was used to glean insight into the protocol. The remote uses the SI24R1 knock-off of the Nordic NRF24L01+ as an RF transceiver. It's controlled by an STM8L151 microcontroller. The RFIC is on a castellated via module, connected to the main PCB via a flex cable.<br />
 
-The NRF24L01 is configured as follows:
+The SI24R1 is configured as follows:
 - TX_ADDR = 12<br />
 - RX_ADDR_P0 = 12<br />
 - ENAA_P0 = 1 (enable auto ACK on data pipe 0)<br />
@@ -37,11 +43,11 @@ The NRF24L01 is configured as follows:
 
 # SPI Bus Sniffing
 
-The SPI bus and NRF24L01 CE pin signals were sniffed by soldering wires onto the castellated vias on the RF module, then captured using a Saleae logic analyzer. The captures were saved and can be viewed using Saleae's Logic software.
+The SPI bus and SI24R1 CE pin signals were sniffed by soldering wires onto the castellated vias on the RF module, then captured using a Saleae logic analyzer. The captures were saved and can be viewed using Saleae's Logic software.
 
 The remote control first sends commands over 2460MHz, which are not acknowledged by the Pavotube and don't appear to accomplish anything. These may be for other lights with a different protocol.
 
-The remote then configures the NRF24L01 for 2515MHz, sends a series of bytes which are acknowledged by the Pavotube but do not seem to do anything. These may be for other lights with a different protocol.
+The remote then configures the SI24R1 for 2515MHz, sends a series of bytes which are acknowledged by the Pavotube but do not seem to do anything. These may be for other lights with a different protocol.
 
 It then sends the command which updates the Pavotube. The command is sent using W_TX_PAYLOAD followed by 4 bytes:
 
@@ -94,7 +100,6 @@ These can be loaded into Saleae Logic to be viewed in detail:<br />
 [HSI Max Brightness, Min Saturation, Magenta](spi_captures/HSI_max_bright_min_sat_color_magenta.sal)<br />
 [CCT Button Press](spi_captures/CCT_Button_Press.sal)<br />
 [HSI Button Press](spi_captures/HSI_button_press.sal)<br />
-
 
 ## Versioning
 

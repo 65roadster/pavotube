@@ -35,39 +35,16 @@ void setup() {
   spiSendByte(38, 6);         // set Pout = 0dBm
   spiSendByte(32, 14);        // setup CRC and POWER_UP
 
-  // HSI Demo - cycle hue at constant intensity = 50 and saturation = 100
-//  for (int i=0 ; i < 256 ; i++) {
-//    setHSI240(50, i, 100);
-//    delay(20);
-//  }
-//  for (int i=0 ; i < 105 ; i++) {
-//    setHSI241(50, i, 100);
-//    delay(20);
-//  }
   setBrightness(0, 50);
 }
 
 void loop() {
-  setHSI241(100, 105, 100);
-  delay(150);
-  setHSI241(0, 0, 105);
-  delay(150);
-  setHSI241(100, 105, 100);
-  delay(125);
-  setHSI241(0, 0, 105);
-  
-  delay(250);
-
-  setHSI240(100, 220, 100);
-  delay(150);
-  setHSI240(0, 0, 100);
-  delay(150);
-  setHSI240(100, 220, 100);
-  delay(125);
-  setHSI240(0, 0, 100);
-
-  delay(250);
+    setHSI240(100, 240, 100);
+    delay(5);
+    setHSI241(0, 104, 100);
+    delay(5);
 }
+
 
 void spiSendByte(byte cmd, byte data)
 {
