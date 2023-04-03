@@ -77,15 +77,15 @@ The FX button sends commands on the 2460MHz channel but doesn't have any noticea
 
 ## Saleae captures
 These can be loaded into Saleae Logic to be viewed in detail:<br />
-[CCT Max Brightness Max Colortemp](spi_captures\CCT_max_brightness_max_colortemp.sal)<br />
-[CCT Max Brightness Min Colortemp](spi_captures\CCT_max_brightness_min_colortemp.sal)<br />
-[CCT Min Brightness Max Colortemp](spi_captures\CCT_min_brightness_max_colortemp.sal)<br />
-[CCT Min Brightness Min Colortemp](spi_captures\CCT_min_brightness_min_colortemp.sal)<br />
+[CCT Max Brightness Max Colortemp](spi_captures/CCT_max_brightness_max_colortemp.sal)<br />
+[CCT Max Brightness Min Colortemp](spi_captures/CCT_max_brightness_min_colortemp.sal)<br />
+[CCT Min Brightness Max Colortemp](spi_captures/CCT_min_brightness_max_colortemp.sal)<br />
+[CCT Min Brightness Min Colortemp](spi_captures/CCT_min_brightness_min_colortemp.sal)<br />
 
 # Software Demo
 
 This sketch was developed on a Teensy 3.2 using the Arduino IDE plugins. It should work on a Nano, Uno, etc.
-[Arduino Sketch](pavotube_demo_sketch\pavotube_demo_sketch.ino)
+[Arduino Sketch](pavotube_demo_sketch/pavotube_demo_sketch.ino)
 
 ## Versioning
 
