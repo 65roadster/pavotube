@@ -84,7 +84,7 @@ These can be loaded into Saleae Logic to be viewed in detail:<br />
 
 # Software Demo
 
-This sketch was developed on a Teensy 3.2 using the Arduino IDE plugins. It should work on a Nano, Uno, etc.
+This sketch was developed on a Teensy 3.2 using the Arduino IDE plugins. It should work on a Nano, Uno, etc.<br />
 [Arduino Sketch](pavotube_demo_sketch/pavotube_demo_sketch.ino)
 
 ## Versioning
