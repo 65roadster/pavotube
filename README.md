@@ -76,7 +76,7 @@ The CCT and HSI buttons on the remote do cause the Pavotube to change between CC
 The FX button sends commands on the 2460MHz channel but doesn't have any noticeable effect on the Pavotube.
 
 ## Saleae captures
-These can be loaded into Saleae Logic to be viewed in detail:
+These can be loaded into Saleae Logic to be viewed in detail:<br />
 [CCT Max Brightness Max Colortemp](spi_captures\CCT_max_brightness_max_colortemp.sal)<br />
 [CCT Max Brightness Min Colortemp](spi_captures\CCT_max_brightness_min_colortemp.sal)<br />
 [CCT Min Brightness Max Colortemp](spi_captures\CCT_min_brightness_max_colortemp.sal)<br />
