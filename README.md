@@ -15,6 +15,11 @@ Teensy 3.2  <--> NRF24L01+ module<br />
 &nbsp;&nbsp;&nbsp;&nbsp;  D0   <--> CE<br />
 &nbsp;&nbsp;&nbsp;&nbsp;  N/C  <--> IRQ<br />
 
+# Demo Software
+This sketch was developed on a Teensy 3.2 using the Arduino IDE plugins. It should work on a Nano, Uno, etc.<br />
+[Demo Sketch](pavotube_demo_sketch/pavotube_demo_sketch.ino)
+[Police Lights Sketch](police_lights_effect\police_lights_effect.ino)
+
 # Transceiver Configuration
 
 The Nanlink WSRCC2 remote was used to glean insight into the protocol. The remote uses the Nordic RF NRF24L01 controlled by an STM8L151 microcontroller. The Nordic IC is on a castellated via module, connected to the main PCB via a flex cable.<br />
@@ -77,20 +82,19 @@ The CCT and HSI buttons on the remote do cause the Pavotube to change between CC
 
 The FX button sends commands on the 2460MHz channel but doesn't have any noticeable effect on the Pavotube.
 
-[CCT Button Press](spi_captures/CCT_button_press.png)<br />
-
-
 ## Saleae captures
 These can be loaded into Saleae Logic to be viewed in detail:<br />
 [CCT Max Brightness Max Colortemp](spi_captures/CCT_max_brightness_max_colortemp.sal)<br />
 [CCT Max Brightness Min Colortemp](spi_captures/CCT_max_brightness_min_colortemp.sal)<br />
 [CCT Min Brightness Max Colortemp](spi_captures/CCT_min_brightness_max_colortemp.sal)<br />
 [CCT Min Brightness Min Colortemp](spi_captures/CCT_min_brightness_min_colortemp.sal)<br />
+[HSI Max Brightness, Max Saturation, Blue](spi_captures/HSI_max_bright_max_sat_color_blue.sal)<br />
+[HSI Max Brightness, Max Saturation, Red](spi_captures/HSI_max_bright_max_sat_color_red.sal)<br />
+[HSI Max Brightness, Max Saturation, Yellow](spi_captures/HSI_max_bright_max_sat_color_yellow.sal)<br />
+[HSI Max Brightness, Max Saturation, Magenta](spi_captures/HSI_max_bright_min_sat_color_magenta.sal)<br />
+[CCT Button Press](spi_captures/CCT_Button_Press.sal)<br />
+[HSI Button Press](spi_captures/HSI_button_press.sal)<br />
 
-# Software Demo
-
-This sketch was developed on a Teensy 3.2 using the Arduino IDE plugins. It should work on a Nano, Uno, etc.<br />
-[Arduino Sketch](pavotube_demo_sketch/pavotube_demo_sketch.ino)
 
 ## Versioning
 
