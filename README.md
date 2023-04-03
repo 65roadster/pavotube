@@ -58,7 +58,7 @@ It then sends the command which updates the Pavotube. The command is sent using 
 ## PNG images of SPI bus sniffing:
 
 ### CCT mode, max brightness, max color temperature:
-[Protocol image with notations](\pavotube\blob\main\spi_captures/CCT_max_brightness_max_colortemp_overview.png)<br />
+[Protocol image with notations](spi_captures/CCT_max_brightness_max_colortemp_overview.png)<br />
 [Zoomed into command 1](spi_captures/CCT_max_brightness_max_colortemp_cmd1.png)<br />
 [Zoomed into command 2](spi_captures/CCT_max_brightness_max_colortemp_cmd2.png)<br />
 [Zoomed into command 3a](spi_captures/CCT_max_brightness_max_colortemp_cmd3a.png)<br />
@@ -68,7 +68,7 @@ It then sends the command which updates the Pavotube. The command is sent using 
 [Zoomed into command 6](spi_captures/CCT_max_brightness_max_colortemp_cmd6.png)<br />
 
 ### CCT mode, min brightness, max color temperature:
-[Zoomed into command 5](tree/main/spi_captures/CCT_min_brightness_max_colortemp_cmd.png)
+[Zoomed into command 5](spi_captures/CCT_min_brightness_max_colortemp_cmd.png)
 
 ### CCT, HSI, FX buttons:
 The CCT and HSI buttons on the remote do cause the Pavotube to change between CCT and HSI modes. The RF payloads are not acknowledged however. I didn't dig into this further as I have no interest in switching tube modes in that way. The tube changes modes automatically when the corresponding HSI or CCT color/intensity/hue command is sent.
@@ -85,7 +85,7 @@ These can be loaded into Saleae Logic to be viewed in detail:
 # Software Demo
 
 This sketch was developed on a Teensy 3.2 using the Arduino IDE plugins. It should work on a Nano, Uno, etc.
-[Code folder](C:\Users\Ray\Documents\GitHub\pavotube\pavotube_demo_sketch\pavotube_demo_sketch.ino)
+[Arduino Sketch](pavotube_demo_sketch\pavotube_demo_sketch.ino)
 
 ## Versioning
 
