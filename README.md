@@ -59,13 +59,13 @@ It then sends the command which updates the Pavotube. The command is sent using 
 
 ### CCT mode, max brightness, max color temperature:
 [Protocol image with notations](\pavotube\blob\main\spi_captures/CCT_max_brightness_max_colortemp_overview.png)<br />
-[Zoomed into command 1](/spi_captures/CCT_max_brightness_max_colortemp_cmd1.png)<br />
+[Zoomed into command 1](spi_captures/CCT_max_brightness_max_colortemp_cmd1.png)<br />
 [Zoomed into command 2](spi_captures/CCT_max_brightness_max_colortemp_cmd2.png)<br />
-[Zoomed into command 3a](tree/main/spi_captures/CCT_max_brightness_max_colortemp_cmd3a.png)<br />
-[Zoomed into command 3b](tree/main/spi_captures/CCT_max_brightness_max_colortemp_cmd3b.png)<br />
-[Zoomed into command 4](tree/main/spi_captures/CCT_max_brightness_max_colortemp_cmd4.png)<br />
-[Zoomed into command 5](tree/main/spi_captures/CCT_max_brightness_max_colortemp_cmd5.png)<br />
-[Zoomed into command 6](tree/main/spi_captures/CCT_max_brightness_max_colortemp_cmd6.png)<br />
+[Zoomed into command 3a](spi_captures/CCT_max_brightness_max_colortemp_cmd3a.png)<br />
+[Zoomed into command 3b](spi_captures/CCT_max_brightness_max_colortemp_cmd3b.png)<br />
+[Zoomed into command 4](spi_captures/CCT_max_brightness_max_colortemp_cmd4.png)<br />
+[Zoomed into command 5](spi_captures/CCT_max_brightness_max_colortemp_cmd5.png)<br />
+[Zoomed into command 6](spi_captures/CCT_max_brightness_max_colortemp_cmd6.png)<br />
 
 ### CCT mode, min brightness, max color temperature:
 [Zoomed into command 5](tree/main/spi_captures/CCT_min_brightness_max_colortemp_cmd.png)
@@ -77,10 +77,10 @@ The FX button sends commands on the 2460MHz channel but doesn't have any noticea
 
 ## Saleae captures
 These can be loaded into Saleae Logic to be viewed in detail:
-[CCT Max Brightness Max Colortemp](tree/main/spi_captures\CCT_max_brightness_max_colortemp.sal)<br />
-[CCT Max Brightness Min Colortemp](tree/main/spi_captures\CCT_max_brightness_min_colortemp.sal)<br />
-[CCT Min Brightness Max Colortemp](tree/main/spi_captures\CCT_min_brightness_max_colortemp.sal)<br />
-[CCT Min Brightness Min Colortemp](tree/main/spi_captures\CCT_min_brightness_min_colortemp.sal)<br />
+[CCT Max Brightness Max Colortemp](spi_captures\CCT_max_brightness_max_colortemp.sal)<br />
+[CCT Max Brightness Min Colortemp](spi_captures\CCT_max_brightness_min_colortemp.sal)<br />
+[CCT Min Brightness Max Colortemp](spi_captures\CCT_min_brightness_max_colortemp.sal)<br />
+[CCT Min Brightness Min Colortemp](spi_captures\CCT_min_brightness_min_colortemp.sal)<br />
 
 # Software Demo
 
