@@ -34,7 +34,7 @@ The NRF24L01 is configured as follows:
 
 The SPI bus and NRF24L01 CE pin signals were sniffed by soldering wires onto the castellated vias on the RF module, then captured using a Saleae logic analyzer. The captures were saved and can be viewed using Saleae's Logic software.
 
-The remote control first sends commands over 2460MHz, which are not acknowledged by the Pavotube and don't appear to accomplish anything.
+The remote control first sends commands over 2460MHz, which are not acknowledged by the Pavotube and don't appear to accomplish anything. These may be for other lights with a different protocol.
 
 The remote then configures the NRF24L01 for 2515MHz, sends a series of bytes which are acknowledged by the Pavotube but do not seem to do anything. These may be for other lights with a different protocol.
 
@@ -49,11 +49,11 @@ It then sends the command which updates the Pavotube. The command is sent using 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    INTENSITY = [0 100]<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    HUE = [0 255] if COLORBAND == 240, [0 to 104] if COLORBAND == 241<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    SATURATION = [0 100]<br />
-
-[Capture of setting max brightness and max colortemp in CCI mode](spi_captures/CCI_max_brightness_max_colortemp.sal)<br />
-
-[Capture of setting min brightness and max colortemp in CCI mode](spi_captures/CCI_min_brightness_max_colortemp.sal)<br />
-
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    BLUE: {240, 100, 240, 100}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    RED: {241, 100, 104, 100}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    GREEN: {240, 100, 83, 100}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    YELLOW: {240, 100, 33, 100}<br />
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    MAGENTA: {241, 100, 79, 100}<br />
 
 ## PNG images of SPI bus sniffing:
 
@@ -74,6 +74,9 @@ It then sends the command which updates the Pavotube. The command is sent using 
 The CCT and HSI buttons on the remote do cause the Pavotube to change between CCT and HSI modes. The RF payloads are not acknowledged however. I didn't dig into this further as I have no interest in switching tube modes in that way. The tube changes modes automatically when the corresponding HSI or CCT color/intensity/hue command is sent.
 
 The FX button sends commands on the 2460MHz channel but doesn't have any noticeable effect on the Pavotube.
+
+[CCT Button Press](spi_captures/CCT_button_press.png)<br />
+
 
 ## Saleae captures
 These can be loaded into Saleae Logic to be viewed in detail:<br />
