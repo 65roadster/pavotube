@@ -91,7 +91,7 @@ These can be loaded into Saleae Logic to be viewed in detail:<br />
 [HSI Max Brightness, Max Saturation, Blue](spi_captures/HSI_max_bright_max_sat_color_blue.sal)<br />
 [HSI Max Brightness, Max Saturation, Red](spi_captures/HSI_max_bright_max_sat_color_red.sal)<br />
 [HSI Max Brightness, Max Saturation, Yellow](spi_captures/HSI_max_bright_max_sat_color_yellow.sal)<br />
-[HSI Max Brightness, Max Saturation, Magenta](spi_captures/HSI_max_bright_min_sat_color_magenta.sal)<br />
+[HSI Max Brightness, Min Saturation, Magenta](spi_captures/HSI_max_bright_min_sat_color_magenta.sal)<br />
 [CCT Button Press](spi_captures/CCT_Button_Press.sal)<br />
 [HSI Button Press](spi_captures/HSI_button_press.sal)<br />
 
