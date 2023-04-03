@@ -58,7 +58,7 @@ It then sends the command which updates the Pavotube. The command is sent using 
 ## PNG images of SPI bus sniffing:
 
 ### CCT mode, max brightness, max color temperature:
-[Protocol image with notations](tree/main/spi_captures/CCT_max_brightness_max_colortemp_overview.png)<br />
+[Protocol image with notations](\pavotube\blob\main\spi_captures/CCT_max_brightness_max_colortemp_overview.png)<br />
 [Zoomed into command 1](tree/main/spi_captures/CCT_max_brightness_max_colortemp_cmd1.png)<br />
 [Zoomed into command 2](tree/main/spi_captures/CCT_max_brightness_max_colortemp_cmd2.png)<br />
 [Zoomed into command 3a](tree/main/spi_captures/CCT_max_brightness_max_colortemp_cmd3a.png)<br />
