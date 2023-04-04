@@ -1,5 +1,7 @@
 # PavoTube 2.4GHz RF Link Reverse Engineering
 
+![PavoTubes](photos/pavotubes.jpg)<br />
+
 This is the results of my hacking the Nanlite PavoTube II 30C RGB LED Tube and Nanlink WSRCC2 remote control to develop my own hardware to control the PavoTube from custom hardware.
 
 # Demo Hardware
