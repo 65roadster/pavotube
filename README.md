@@ -1,6 +1,6 @@
 # Pavotube 2.4GHz RF Link Reverse Engineering
 
-This is the results of my hackinig the Nanlite PavoTube II 30C RGB LED Tube and Nanlink WSRCC2 remote control to develop my own hardware to control it over an RF link.
+This is the results of my hacking the Nanlite PavoTube II 30C RGB LED Tube and Nanlink WSRCC2 remote control to develop my own hardware to control the PavoTube from custom hardware.
 
 # Demo Hardware
 The demo sketch was loaded onto a Teensy 3.2 which was wired to an NRF24L01+ module.<br />
@@ -14,14 +14,17 @@ Teensy 3.2  <--> NRF24L01+ module<br />
 &nbsp;&nbsp;&nbsp;&nbsp;  D10  <--> /CS<br />
 &nbsp;&nbsp;&nbsp;&nbsp;  D0   <--> CE<br />
 &nbsp;&nbsp;&nbsp;&nbsp;  N/C  <--> IRQ<br />
+<br />
+![SI24R1 IC](photos/demo_hardware.jpg)<br />
 
 # Demo Software
-This sketch was developed on a Teensy 3.2 using the Arduino IDE plugins. It should work on a Nano, Uno, etc.<br />
-[Demo Sketch](pavotube_demo_sketch/pavotube_demo_sketch.ino)
-[Police Lights Sketch](police_lights_effect\police_lights_effect.ino)
+These sketch was developed on a Teensy 3.2 using the Arduino IDE plugins. It should work on a Nano, Uno, etc.<br />
+[Demo Sketch](pavotube_demo_sketch/pavotube_demo_sketch.ino)<br />
+[Police Lights Sketch](police_lights_effect\police_lights_effect.ino)<br />
+[Fast Effects Sketch](pavotube/fastest_effects/fastest_effects.ino)
 
 # High Speed Effects
-Using Slo-Mo video on my iPhone 13 Pro I can verify that I get good color rendition down to 5ms on-time. This is much faster than my brain can process it; high-speed effects are possible.
+Using slow-mo video on my iPhone 13 Pro I can verify that I get good color rendition down to 5ms on-time. This is much faster than my brain can process it; high-speed effects are possible.
 
 # Pavotube Configuration
 The Pavotube address was set to 12. Any address can be used, just update the *ADDR* values in the NRF24L01+ configuration commands.
@@ -100,6 +103,11 @@ These can be loaded into Saleae Logic to be viewed in detail:<br />
 [HSI Max Brightness, Min Saturation, Magenta](spi_captures/HSI_max_bright_min_sat_color_magenta.sal)<br />
 [CCT Button Press](spi_captures/CCT_Button_Press.sal)<br />
 [HSI Button Press](spi_captures/HSI_button_press.sal)<br />
+
+## Nanlink Remote Photos
+![SI24R1 IC](photos/Nanlink Remote SI24R1.jpg)<br />
+![STM8L151 IC](photos/Nanlink Remote STM8L151.jpg)<br />
+![RF Module](photos/Nanlink Remote RF Module.jpg)<br />
 
 ## Versioning
 
