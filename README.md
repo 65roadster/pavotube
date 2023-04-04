@@ -20,8 +20,8 @@ Teensy 3.2  <--> NRF24L01+ module<br />
 # Demo Software
 These sketch was developed on a Teensy 3.2 using the Arduino IDE plugins. It should work on a Nano, Uno, etc.<br />
 [Demo Sketch](pavotube_demo_sketch/pavotube_demo_sketch.ino)<br />
-[Police Lights Sketch](police_lights_effect\police_lights_effect.ino)<br />
-[Fast Effects Sketch](pavotube/fastest_effects/fastest_effects.ino)
+[Police Lights Sketch](police_lights_effect/police_lights_effect.ino)<br />
+[Fast Effects Sketch](fastest_effects/fastest_effects.ino)
 
 # High Speed Effects
 Using slow-mo video on my iPhone 13 Pro I can verify that I get good color rendition down to 5ms on-time. This is much faster than my brain can process it; high-speed effects are possible.
