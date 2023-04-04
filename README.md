@@ -105,7 +105,7 @@ These can be loaded into Saleae Logic to be viewed in detail:<br />
 [HSI Button Press](spi_captures/HSI_button_press.sal)<br />
 
 ## Nanlink Remote Photos
-![SI24R1 IC](photos/nanlink_remote_si24ri.jpg)<br />
+![SI24R1 IC](photos/nanlink_remote_si24r1.jpg)<br />
 ![STM8L151 IC](photos/nanlink_remote_stm8l151.jpg)<br />
 ![RF Module](photos/nanlink_remote_rf_module.jpg)<br />
 
